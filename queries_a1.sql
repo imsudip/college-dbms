@@ -40,12 +40,24 @@ INSERT INTO DEPARTMENT (DEPT_CODE, DEPT_NAME)
 VALUES ('PER', 'Personnel'), ('PRO', 'Production'), ('PUR', 'Purchase'), ('FIN', 'Finance'), ('RES', 'Research');
 
 INSERT INTO EMPLOYEE (EMP_CODE, EMP_NAME, DEPT_CODE, DESIG_CODE, SEX, ADDRESS, CITY, STATE, PIN, BASIC, JN_DT)
-VALUES ('001', 'John Doe', 'PER', 'MGR', 'M', '123 Main St', 'New York', 'NY', '10001', 50000, '2000-01-01'),
-       ('002', 'Jane Smith', 'PRO', 'EXE', 'F', '456 Elm St', 'Los Angeles', 'CA', '90001', 40000, '2005-03-15'),
-       ('003', 'Bob Johnson', 'PUR', 'OFF', 'M', '789 Oak St', 'Chicago', 'IL', '60601', 30000, '2012-06-30');
-
--- Indian names
-INSERT INTO EMPLOYEE 
+VALUES ('001', 'Rajesh Kumar', 'PER', 'MGR', 'M', '123 Main St', 'New York', 'NY', '10001', 50000, '2000-01-01'),
+       ('002', 'Sunita Sharma', 'PRO', 'EXE', 'F', '456 Elm St', 'Los Angeles', 'CA', '90001', 40000, '2005-03-15'),
+       ('003', 'Ramesh Singh', 'PUR', 'OFF', 'M', '789 Oak St', 'Chicago', 'IL', '60601', 30000, '2012-06-30'),
+       ('006', 'Suresh Kumar', 'FIN', 'CLK', 'M', '369 Pine St', 'San Francisco', 'CA', '94101', 20000, '2018-09-15'),
+       ('007', 'Rajeshwari Devi', 'RES', 'HLP', 'F', '246 Maple St', 'Boston', 'MA', '02101', 10000, '2015-02-28'),
+       ('008', 'Sunita Kumari', 'PRO', 'EXE', 'F', '369 Pine St', 'San Francisco', 'CA', '94101', 40000, '2018-09-15');
+INSERT INTO EMPLOYEE (EMP_CODE, EMP_NAME, DEPT_CODE, DESIG_CODE, SEX, ADDRESS, CITY, STATE, PIN, BASIC, JN_DT)
+VALUES
+    ('009', 'Amit Patel', 'RES', 'HLP', 'M', '789 Oak St', 'Chicago', 'IL', '60601', 15000, '2019-04-10'),
+    ('010', 'Anita Verma', 'FIN', 'CLK', 'F', '123 Main St', 'New York', 'NY', '10001', 18000, '2020-07-20'),
+    ('011', 'Manoj Sharma', 'PUR', 'OFF', 'M', '456 Elm St', 'Los Angeles', 'CA', '90001', 25000, '2021-09-05'),
+    ('012', 'Priya Gupta', 'RES', 'HLP', 'F', '789 Oak St', 'Chicago', 'IL', '60601', 13000, '2017-11-11'),
+    ('013', 'Rahul Singh', 'PRO', 'EXE', 'M', '246 Maple St', 'Boston', 'MA', '02101', 35000, '2014-08-18'),
+    ('014', 'Anjali Sharma', 'PER', 'MGR', 'F', '369 Pine St', 'San Francisco', 'CA', '94101', 45000, '2013-05-25'),
+    ('015', 'Vikas Mehta', 'FIN', 'CLK', 'M', '789 Oak St', 'Chicago', 'IL', '60601', 23000, '2016-02-10'),
+    ('016', 'Pooja Kumari', 'PER', 'MGR', 'F', '123 Main St', 'New York', 'NY', '10001', 55000, '2011-07-08'),
+    ('017', 'Sanjay Gupta', 'PRO', 'EXE', 'M', '456 Elm St', 'Los Angeles', 'CA', '90001', 38000, '2009-10-12'),
+    ('018', 'Deepika Patel', 'PUR', 'OFF', 'F', '789 Oak St', 'Chicago', 'IL', '60601', 32000, '2010-12-30');
 
 --Q4 Insert rows without DEPT_CODE and BASIC
 INSERT INTO EMPLOYEE (EMP_CODE, EMP_NAME, DESIG_CODE, SEX, ADDRESS, CITY, STATE, PIN, JN_DT)
@@ -97,5 +109,6 @@ UPDATE EMPLOYEE SET CITY = UPPER(CITY);
 --Q19 Find how many different cities various employees are residing
 SELECT COUNT(DISTINCT CITY) FROM EMPLOYEE;
 
---Q20 Display employee information in ascending order of DEPT_CODE
-SELECT * FROM EMPLOYEE ORDER BY DEPT_CODE ASC;
+--Q20 Display the employee information in the ascending order of DEPT_CODE and with
+-- in a Department, it should be in the descending order of BASIC.
+SELECT * FROM EMPLOYEE ORDER BY DEPT_CODE ASC, BASIC DESC;
