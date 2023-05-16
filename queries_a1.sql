@@ -44,6 +44,9 @@ VALUES ('001', 'John Doe', 'PER', 'MGR', 'M', '123 Main St', 'New York', 'NY', '
        ('002', 'Jane Smith', 'PRO', 'EXE', 'F', '456 Elm St', 'Los Angeles', 'CA', '90001', 40000, '2005-03-15'),
        ('003', 'Bob Johnson', 'PUR', 'OFF', 'M', '789 Oak St', 'Chicago', 'IL', '60601', 30000, '2012-06-30');
 
+-- Indian names
+INSERT INTO EMPLOYEE 
+
 --Q4 Insert rows without DEPT_CODE and BASIC
 INSERT INTO EMPLOYEE (EMP_CODE, EMP_NAME, DESIG_CODE, SEX, ADDRESS, CITY, STATE, PIN, JN_DT)
 VALUES ('004', 'Sally Brown', 'CLK', 'F', '246 Maple St', 'Boston', 'MA', '02101', '2015-02-28'),
