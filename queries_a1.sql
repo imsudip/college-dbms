@@ -1,5 +1,4 @@
 -- Q1
-
 CREATE TABLE EMPLOYEE
 (
 EMP_CODE CHAR(16) PRIMARY KEY,
@@ -26,6 +25,9 @@ CREATE TABLE DEPARTMENT
 DEPT_CODE CHAR(16) PRIMARY KEY,
 DEPT_NAME CHAR(20)
 );
+
+
+
 
 -- Q2. Display the structure of each table 
 PRAGMA table_info(EMPLOYEE);
